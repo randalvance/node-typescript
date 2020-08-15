@@ -4,15 +4,18 @@
   "description": "",
   "main": "src/server.ts",
   "scripts": {
-    "start": "nodemon src/server.ts",
-    "build": "tsc --project ./"
+    "start": "npm-run-all --parallel watch:server watch:build",
+    "watch:server": "nodemon \"./dist/server.js\" --watch \"./dist\" ",
+    "watch:build": "webpack --watch",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/randalvance/node-typescript.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Randal Vance Cunanan",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/randalvance/node-typescript/issues"
@@ -26,8 +29,10 @@
     "@types/node": "^14.0.27",
     "@types/webpack": "^4.41.21",
     "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
     "ts-loader": "^8.0.2",
-    "ts-node": "^8.10.2",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   }
 }

@@ -6,7 +6,7 @@ const PORT = 8000;
 
 app.get('/', (req, res) => {
     helloWorld();
-    res.send('Express + Typescript Server');
+    res.send('Express + Typescript Server!');
 });
 
 app.listen(PORT, () => {
