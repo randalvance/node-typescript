@@ -1,5 +1,4 @@
 {
-  // https://gist.github.com/cecilemuller/2963155d0f249c1544289b78a1cdd695
   "version": "0.2.0",
   "configurations": [
     {
@@ -7,9 +6,10 @@
       "request": "launch",
       "name": "Launch Program",
       "program": "${workspaceFolder}/src/server.ts",
-      "preLaunchTask": "npm: build",
-      "sourceMaps": true,
-      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+      "preLaunchTask": "npm: build:ts",
+      "outFiles": [
+        "${workspaceFolder}/dist/**/*.js"
+      ]
     }
   ]
 }

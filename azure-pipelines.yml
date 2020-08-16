@@ -21,16 +21,9 @@ steps:
     npm run build
   displayName: 'Build Project'
 
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(Build.SourcesDirectory)/dist'
-    includeRootFolder: false
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    replaceExistingArchive: true
-
 - task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact'
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    PathtoPublish: '$(Build.SourcesDirectory)/dist'
     ArtifactName: 'drop'
     publishLocation: 'Container'

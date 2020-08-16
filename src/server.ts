@@ -1,14 +1,15 @@
 import express from 'express';
-import helloWorld from './helloWorld';
+import greet from './greet';
 
-const app = express();
-const PORT = 8000;
+const app: express.Application = express();
+const port = process.env.PORT || 8000;
 
 app.get('/', (req, res) => {
-    helloWorld();
-    res.send('Express + Typescript Server!');
+    const name = req.query.name ?? 'Stranger';
+    const greeting = greet(name);
+    res.send(greeting);
 });
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}...`);
+app.listen(port, () => {
+    console.log(`Listening at port ${port}`);
 });
