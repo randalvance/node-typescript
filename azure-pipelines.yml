@@ -37,6 +37,6 @@ steps:
     azureSubscription: $(AzureSubscription)
     appType: 'webAppLinux'
     WebAppName: 'node-typescript-randal'
-    packageForLinux: '$(Build.ArtifactStagingDirectory)'
+    packageForLinux: '$(Build.SourcesDirectory)/dist'
     RuntimeStack: 'NODE|12-lts'
     StartupCommand: 'node server.js'
